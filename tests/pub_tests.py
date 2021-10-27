@@ -26,3 +26,14 @@ class TestPub(unittest.TestCase):
 
     def test_customer_name(self):
         self.assertEqual("James", self.customer1.name)
+
+    def test_customer_wallet(self):
+        self.assertEqual(50, self.customer2.wallet)
+
+    def test_wallet_decrease(self):
+        self.pub.purchase_drink(self.customer1, self.drinks_1)
+        self.assertEqual(21, self.customer1.wallet)
+    
+    def test_till_increase(self):
+        self.pub.purchase_drink(self.customer1, self.drinks_1)
+        self.assertEqual(104, self.pub.pub_till)

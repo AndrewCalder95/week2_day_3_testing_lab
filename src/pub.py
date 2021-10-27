@@ -8,8 +8,8 @@ class Pub:
         self.drinks = drink_list
 
     
-    # def add_drink(self, drink):
-    #     for drink in self.drinks:
-    #         self.drinks.append(drink)
+    def purchase_drink(self, customer, drink):
+        self.pub_till += drink.price
+        customer.wallet -= drink.price
 
    
