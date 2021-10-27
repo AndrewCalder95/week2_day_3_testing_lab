@@ -13,6 +13,8 @@ class Pub:
             self.pub_till += drink.price
             customer.wallet -= drink.price
             customer.drunkeness += drink.alcohol_level 
+            if customer.drunkeness >= 200:
+                return "yer too drunk pal"                
         else:
             return "Cannot serve customer"
 
