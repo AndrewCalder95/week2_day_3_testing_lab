@@ -40,3 +40,7 @@ class TestPub(unittest.TestCase):
 
     def test_customer_age(self):
         self.assertEqual(36, self.customer1.age)
+
+    def test_age_check(self):
+        self.assertEqual("Cannot serve customer", self.pub.purchase_drink(self.customer2, self.drinks_1))
+    

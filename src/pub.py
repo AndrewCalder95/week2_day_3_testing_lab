@@ -9,7 +9,10 @@ class Pub:
 
     
     def purchase_drink(self, customer, drink):
-        self.pub_till += drink.price
-        customer.wallet -= drink.price
+        if customer.age >= 18:
+            self.pub_till += drink.price
+            customer.wallet -= drink.price
+        else:
+            return "Cannot serve customer"
 
    
