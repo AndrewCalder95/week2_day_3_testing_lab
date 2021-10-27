@@ -1,8 +1,14 @@
+from src.drinks import Drink
+
 class Pub:
-    def __init__(self, name, till):
+    def __init__(self, name, till, drink_list):
         self.pub_name = name 
         self.pub_till = till
-        self.drink = []
+        self.drinks = drink_list
 
-    def return_pub_name(self, name):
-        return name
+    
+    # def add_drink(self, drink):
+    #     for drink in self.drinks:
+    #         self.drinks.append(drink)
+
+   
