@@ -7,9 +7,9 @@ class TestPub(unittest.TestCase):
     def setUp(self):
         self.customer1 = Customer("James", 25, 36)
         self.customer2 = Customer("Sarah", 50, 16)
-        self.drinks_1 = Drink("Vodka", 4)
-        self.drinks_2 = Drink("Beer", 5)
-        self.drinks_3 = Drink("Wine", 7)
+        self.drinks_1 = Drink("Vodka", 4, 40)
+        self.drinks_2 = Drink("Beer", 5, 5)
+        self.drinks_3 = Drink("Wine", 7, 13)
 
         drink_list = [self.drinks_1, self.drinks_2, self.drinks_3]
         
@@ -44,3 +44,5 @@ class TestPub(unittest.TestCase):
     def test_age_check(self):
         self.assertEqual("Cannot serve customer", self.pub.purchase_drink(self.customer2, self.drinks_1))
     
+    def test_drinks_alcohol(self):
+        self.assertEqual(40, self.drinks_1.alcohol_level)
