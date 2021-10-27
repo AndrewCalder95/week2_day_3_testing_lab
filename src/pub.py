@@ -1,4 +1,5 @@
 from src.drinks import Drink
+from src.customer import Customer
 
 class Pub:
     def __init__(self, name, till, drink_list):

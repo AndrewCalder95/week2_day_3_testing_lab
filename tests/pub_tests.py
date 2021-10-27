@@ -1,15 +1,18 @@
 import unittest
 from src.pub import Pub
 from src.drinks import Drink
+from src.customer import Customer
 
 class TestPub(unittest.TestCase):
     def setUp(self):
+        self.customer1 = Customer("James", 25)
+        self.customer2 = Customer("Sarah", 50)
         self.drinks_1 = Drink("Vodka", 4)
         self.drinks_2 = Drink("Beer", 5)
         self.drinks_3 = Drink("Wine", 7)
 
         drink_list = [self.drinks_1, self.drinks_2, self.drinks_3]
-
+        
         self.pub = Pub("The Sparkle Horse", 100, drink_list)
         
     def test_pub_name(self):
@@ -20,3 +23,6 @@ class TestPub(unittest.TestCase):
     
     def test_pub_drinks(self):
         self.assertEqual(3, len(self.pub.drinks))
+
+    def test_customer_name(self):
+        self.assertEqual("James", self.customer1.name)
