@@ -5,8 +5,8 @@ from src.customer import Customer
 
 class TestPub(unittest.TestCase):
     def setUp(self):
-        self.customer1 = Customer("James", 25)
-        self.customer2 = Customer("Sarah", 50)
+        self.customer1 = Customer("James", 25, 36)
+        self.customer2 = Customer("Sarah", 50, 16)
         self.drinks_1 = Drink("Vodka", 4)
         self.drinks_2 = Drink("Beer", 5)
         self.drinks_3 = Drink("Wine", 7)
@@ -37,3 +37,6 @@ class TestPub(unittest.TestCase):
     def test_till_increase(self):
         self.pub.purchase_drink(self.customer1, self.drinks_1)
         self.assertEqual(104, self.pub.pub_till)
+
+    def test_customer_age(self):
+        self.assertEqual(36, self.customer1.age)
