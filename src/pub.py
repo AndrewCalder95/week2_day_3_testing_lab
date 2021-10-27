@@ -12,6 +12,7 @@ class Pub:
         if customer.age >= 18:
             self.pub_till += drink.price
             customer.wallet -= drink.price
+            customer.drunkeness += drink.alcohol_level 
         else:
             return "Cannot serve customer"
 

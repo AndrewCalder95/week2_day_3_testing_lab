@@ -46,3 +46,14 @@ class TestPub(unittest.TestCase):
     
     def test_drinks_alcohol(self):
         self.assertEqual(40, self.drinks_1.alcohol_level)
+
+    def test_customer_drunkeness_exists(self):
+        self.assertEqual(0, self.customer1.drunkeness)
+    
+    def test_customer_drunkeness(self):
+        self.pub.purchase_drink(self.customer1, self.drinks_1)
+        self.pub.purchase_drink(self.customer1, self.drinks_1)
+        self.assertEqual(80, self.customer1.drunkeness)
+    
+
+    
